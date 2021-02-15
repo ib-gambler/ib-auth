@@ -1,6 +1,8 @@
 FROM golang:1.15.7 AS build
 
 RUN go env -w GOPROXY=https://goproxy.cn,direct
+ENV BUILD_TAGS=jsoniter \
+    BUILD_LDFLAGS="-s -w -linkmode external -extldflags \"-static\""
 
 WORKDIR /app
 
@@ -9,7 +11,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o ib-auth cmd/main.go
+RUN go build -tags="$BUILD_TAGS" -ldflags="$BUILD_LDFLAGS" -o ib-auth cmd/main.go
 
 FROM alpine:3.13.1
 
