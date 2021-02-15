@@ -6,5 +6,6 @@ services:
 if: tag IS present
 
 script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t ibgambler/ib-auth:$TRAVIS_TAG .
-  - docker push ibgambler/ib-auth:$TRAVIS_TAG
+  - docker push ibgambler/ib-auth:"$TRAVIS_TAG"
