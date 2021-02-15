@@ -12,6 +12,13 @@
 
 1. Keeping Session Alive
 
-   ```http
-   GET /v1/api/sso/validate
-   ```
+```http request
+GET /v1/api/sso/validate
+```
+
+## 使用
+
+```bash
+docker pull ibgambler/ib-auth
+docker run -e HOST=https://{url to your host}:5000 ibgambler/ib-auth
+```
