@@ -16,7 +16,8 @@ FROM alpine:3.13.1
 ENV TZ=Asia/Shanghai \
     LANG=C.UTF-8
 
-RUN apk add -u ca-certificates tzdata && \
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
+    apk add -u ca-certificates tzdata && \
     cp /usr/share/zoneinfo/$TZ /etc/localtime && \
     echo $TZ > /etc/timezone
 
