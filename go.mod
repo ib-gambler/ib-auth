@@ -1,4 +1,4 @@
-module github.com/ppaanngggg/ib-auth
+module github.com/ib-gambler/ib-auth
 
 go 1.15
 

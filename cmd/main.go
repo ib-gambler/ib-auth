@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ppaanngggg/ib-auth/pkg"
+	"github.com/ib-gambler/ib-auth/pkg"
 	"github.com/robfig/cron/v3"
 	"github.com/rs/zerolog/log"
 )
