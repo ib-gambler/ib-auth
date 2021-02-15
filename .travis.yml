@@ -1,0 +1,10 @@
+language: go
+
+services:
+  - docker
+
+if: tag IS present
+
+script:
+  - docker build -t ibgambler/ib-auth:$TRAVIS_TAG .
+  - docker push ibgambler/ib-auth:$TRAVIS_TAG
