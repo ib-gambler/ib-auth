@@ -8,3 +8,10 @@ func TestValidateSSO(t *testing.T) {
 		t.Fatal(err)
 	}
 }
+
+func TestGetAuthenticationStatus(t *testing.T) {
+	err := GetAuthenticationStatus()
+	if err != nil {
+		t.Fatal(err)
+	}
+}
